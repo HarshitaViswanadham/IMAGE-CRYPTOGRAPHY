@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>DECRYPT</title>
+    <style>
+        body{
+        background-image:url("/static/bg.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        }
+    </style>
+</head>
+{% block content %}
+<body>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <input type="button" value="RETURN" onclick="window.history.go(-1)" style="color:red; width:100px; height:30px" />
+
+    <style>
+        .align{
+            text-align: center;
+            text-size: 60px;
+            color: white;
+        }
+    </style>
+    <br><br><br><br>
+    <h1 style="color:white" font="algerian" align="center">DECRYPT IMAGE USING AES</h1>
+
+    <br><br>
+    {% if error %}
+    <div class="container">
+    <div class="alert alert-danger alert-dismissible fade show">
+        {{ error }}
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div> {% endif %} <br><br></div>
+
+    <form method = "post" enctype="multipart/form-data">
+        <div class="align"><input type="file" name="file"/><br><br><br>
+        <label for="text">ENTER KEY  </label><input type="text" id="text" name="text"><br><br><br><br>
+        <input type="submit" value="DECRYPT"/></div>
+    </form>
+</body>
+{% endblock %}
+</html>
